@@ -1,28 +1,222 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PEP8 수호자 협회</title>
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>
-        <a href="/"> PEP8 수호자 협회</a>
-      </h1>
-
-      <nav>
-        <a href="/about">소개</a>
-        <a href="https://peps.python.org/pep-0008/">PEP8</a>
-        <a href="/community">커뮤니티</a>
-        <a href="/resources">리소스</a>
-        <a href="/contact">문의하기</a>
-      </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEP8 수호자 협회 - Python 코딩 스타일 가이드 커뮤니티</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="PEP8 가이드라인을 준수하는 Python 개발자들의 커뮤니티">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1><a href="/">🐍 PEP8 수호자 협회</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about">소개</a></li>
+                <li><a href="#guidelines">가이드라인</a></li>
+                <li><a href="#tools">도구</a></li>
+                <li><a href="#community">커뮤니티</a></li>
+                <li><a href="https://peps.python.org/pep-0008/" target="_blank">PEP8 공식 문서</a></li>
+            </ul>
+            <button class="hamburger" aria-label="메뉴 토글">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
     </header>
 
     <main>
-      <p>PEP8 수호자 협회는 PEP8 가이드라인 준수를 권장합니다.</p>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>아름다운 Python 코드를 위한 여정</h2>
+                <p>PEP8 가이드라인을 따라 더 읽기 쉽고 유지보수하기 쉬운 Python 코드를 작성해보세요.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('guidelines')">가이드라인 보기</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('tools')">도구 살펴보기</button>
+                </div>
+            </div>
+            <div class="hero-code">
+                <pre><code class="python-code"># PEP8을 따르는 깔끔한 Python 코드
+def calculate_area(length: float, width: float) -> float:
+    """사각형의 넓이를 계산합니다."""
+    return length * width
+
+class Rectangle:
+    """PEP8 스타일을 따르는 Rectangle 클래스"""
+    
+    def __init__(self, length: float, width: float):
+        self.length = length
+        self.width = width
+    
+    def get_area(self) -> float:
+        return calculate_area(self.length, self.width)</code></pre>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>🎯 우리의 미션</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>📚 교육</h3>
+                        <p>PEP8 가이드라인을 쉽게 이해하고 적용할 수 있도록 도움을 제공합니다.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🤝 커뮤니티</h3>
+                        <p>깔끔한 코드를 추구하는 Python 개발자들의 네트워킹을 지원합니다.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🛠️ 도구</h3>
+                        <p>PEP8 준수를 도와주는 다양한 도구와 리소스를 소개합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="guidelines" class="section bg-light">
+            <div class="container">
+                <h2>📋 핵심 가이드라인</h2>
+                <div class="guidelines-grid">
+                    <div class="guideline-item">
+                        <div class="guideline-number">1</div>
+                        <h3>들여쓰기</h3>
+                        <p>스페이스 4개를 사용하여 들여쓰기를 합니다.</p>
+                        <code>if condition:<br>&nbsp;&nbsp;&nbsp;&nbsp;do_something()</code>
+                    </div>
+                    <div class="guideline-item">
+                        <div class="guideline-number">2</div>
+                        <h3>라인 길이</h3>
+                        <p>한 줄은 최대 79자를 넘지 않도록 합니다.</p>
+                        <code># 긴 줄은 이렇게 나누세요<br>result = some_function_with_long_name(<br>&nbsp;&nbsp;&nbsp;&nbsp;parameter1, parameter2)</code>
+                    </div>
+                    <div class="guideline-item">
+                        <div class="guideline-number">3</div>
+                        <h3>함수명</h3>
+                        <p>함수와 변수는 snake_case를 사용합니다.</p>
+                        <code>def calculate_total_price():<br>&nbsp;&nbsp;&nbsp;&nbsp;user_name = "python_lover"</code>
+                    </div>
+                    <div class="guideline-item">
+                        <div class="guideline-number">4</div>
+                        <h3>클래스명</h3>
+                        <p>클래스는 CapWords(PascalCase)를 사용합니다.</p>
+                        <code>class UserAccount:<br>&nbsp;&nbsp;&nbsp;&nbsp;pass</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="section">
+            <div class="container">
+                <h2>🛠️ 추천 도구</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>Black</h3>
+                        <p>자동 코드 포매터로 PEP8 스타일을 일관되게 적용합니다.</p>
+                        <code>pip install black<br>black your_file.py</code>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Flake8</h3>
+                        <p>PEP8 위반사항을 찾아주는 린터입니다.</p>
+                        <code>pip install flake8<br>flake8 your_file.py</code>
+                    </div>
+                    <div class="tool-card">
+                        <h3>isort</h3>
+                        <p>import 문을 PEP8 기준에 맞게 정렬합니다.</p>
+                        <code>pip install isort<br>isort your_file.py</code>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Ruff</h3>
+                        <p>빠르고 강력한 Python 린터 및 포매터입니다.</p>
+                        <code>pip install ruff<br>ruff check .<br>ruff format .</code>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Pre-commit</h3>
+                        <p>커밋 전에 자동으로 코드 스타일을 검사합니다.</p>
+                        <code>pip install pre-commit<br>pre-commit install</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="section bg-light">
+            <div class="container">
+                <h2>🤝 커뮤니티</h2>
+                <div class="community-content">
+                    <div class="community-stats">
+                        <div class="stat">
+                            <div class="stat-number">1,337</div>
+                            <div class="stat-label">멤버</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">42</div>
+                            <div class="stat-label">프로젝트</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">99.8%</div>
+                            <div class="stat-label">PEP8 준수율</div>
+                        </div>
+                    </div>
+                    <div class="community-info">
+                        <h3>함께 성장하는 커뮤니티</h3>
+                        <p>PEP8 수호자 협회는 깨끗하고 읽기 쉬운 Python 코드를 작성하는 개발자들의 모임입니다. 
+                           경험을 공유하고, 서로 배우며, 더 나은 코드를 위해 함께 노력합니다.</p>
+                        <ul class="community-features">
+                            <li>✅ 코드 리뷰 및 피드백</li>
+                            <li>✅ PEP8 가이드라인 학습</li>
+                            <li>✅ 베스트 프랙티스 공유</li>
+                            <li>✅ 도구 및 팁 교환</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="container">
+                <blockquote>
+                    "Code is read much more often than it is written."
+                    <cite>— Guido van Rossum, Python의 창시자</cite>
+                </blockquote>
+            </div>
+        </section>
     </main>
-  </body>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PEP8 수호자 협회</h3>
+                    <p>더 아름다운 Python 코드를 위한 여정에 함께하세요.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>링크</h4>
+                    <ul>
+                        <li><a href="https://peps.python.org/pep-0008/">PEP8 공식 문서</a></li>
+                        <li><a href="https://black.readthedocs.io/">Black</a></li>
+                        <li><a href="https://flake8.pycqa.org/">Flake8</a></li>
+                        <li><a href="https://pycqa.github.io/isort/">isort</a></li>
+                        <li><a href="https://docs.astral.sh/ruff/">Ruff</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>커뮤니티</h4>
+                    <ul>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Stack Overflow</a></li>
+                        <li><a href="#">Reddit</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PEP8 수호자 협회. 모든 권리 보유.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
